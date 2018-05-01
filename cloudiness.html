@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bootstrap Visualization Dashboard</title>
+  
+  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- I am temporarily putting CSS in HTML for testing. I will move it into its own file later. -->
+<style>
+.container {
+  background: white;
+}
+/* trying to get rid of underline when clicking on a link */
+a:active{
+    text-decoration: none;
+}
+
+.btn-primary{
+    background-color: #8AD4D1;
+    text-decoration: none;
+    border-color: #8AD4D1;
+}
+.navbar-brand
+{
+    position: relative;
+    /* background: url(../images/logo.png); */
+    width: 130px;
+    /* 170 */
+    left: 15px;
+    height: 56px;
+    /* max-height: 70px; 70 height of the navbar */
+}
+.navbar-custom {
+  background-color: #ffffff !important;
+}
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background: #666666;
+}
+.current-tag{
+    border: 5px;
+    border-width: 5px;
+    border-color: navy;
+    border-style: solid;
+}
+
+</style>
+
+</head>
+
+<body style="background-color: #EDEDED">
+    <!-- rgb(211, 211, 211) -->
+<!-- <body> -->
+  <!-- <nav class = "navbar navbar-default navbar-fixed-top"> -->
+      <nav class="navbar navbar-header navbar-custom navbar-expand-lg navbar-light bg-light">
+        <!-- <div class = "container-fluid"></div> -->
+
+        <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+              </button> -->
+
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+        </button> -->
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+
+
+        
+          <button type="button" class="btn btn-primary btn-lg"><a href = "index.html" style = "color:white;font-family: 'Segoe UI;"><strong>Latitude</strong></a></button>
+
+          <!-- background color did not look good due to sizing. -->
+          <!-- <div class="col-md-1">
+          <a class="navbar-brand" href="index.html" style="color: #FFFFFF; background-color: teal;">
+              <span class="nav-color">Latitude</span></a>
+            </div> -->
+
+          <!-- <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+          <!-- Empty columns to move pages on right. -->
+          <!-- <div class = "col-md-1"></div>
+          <div class = "col-md-1"></div>
+          <div class = "col-md-1"></div> -->
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <!-- mr-auto -->
+              
+              <li class="nav-item dropdown">
+
+                  <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a> -->
+
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Plots
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="temperature.html">Max Temperature</a>
+                  <a class="dropdown-item" href="humidity.html">Humidity</a>
+                  <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                  <a class="dropdown-item" href="windspeed.html">Wind Speed</a>
+                  <!-- <div class="dropdown-divider"></div> -->
+                  <!-- <a class="dropdown-item" href="#">Comparision</a> -->
+                </div>
+              </li>
+
+              <li class="nav-item active">
+                  <a class="nav-link" href="comparision.html">Comparision</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="data.html">Data</a>
+                </li>
+            </ul>
+            </div>
+      </nav>
+    
+
+
+<!-- <div id="navbar" class="collapse navbar-collapse">
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li>Plots</li>
+        <li>Comparisons</li>
+        <li>Data</li>
+      </ul>
+    </div>
+  </div>
+ </nav> -->
+ 
+
+ <!-- <br>
+ <br> -->
+ <br>
+ <br>
+ <div class = "container-fluid">
+ <div class = "row">
+ <!-- <div class="col-md-1"></div> -->
+ <div class="col-md-7">
+    <div class="container">
+ <h3>Average Cloud Cover</h3>
+ <hr>
+ <!-- float: left;  -->
+ <img class = "img-responsive" src ="Images/LatitudeVsCloudiness.png" style = "width:50%; margin:5px;" alt = "Latitude vs Temperature">
+ <p>No significant correlation was found between latitude and cloud cover. Interestingly, however, 0% average cloud cover increases in frequency between -10 and -25 degrees latitude as well as between 20 and 50 degrees latitude. </p>
+
+</div>
+</div>
+<!-- </div> -->
+<div class="col-md-1"></div>
+
+<div class="col-md-3">
+  <div class="panel panel-default">
+    <div class = "panel-body">
+        <div class="container">
+      <h2>visualizations</h2>
+      <hr>
+      <div class = "row" style = "with:60%; padding-bottom: 10px">
+        <div class = "col"><a href="temperature.html"><img class = "img-responsive" src ="Images/LatitudeVsTemperature.png" style = "width:100%;" alt = "Latitude vs Temperature"></a></div>
+        <div class = "col"><a href="humidity.html"><img class = "img-responsive" src ="Images/LatitudeVsHumidity.png" style = "width:100%;" alt = "Latitude vs Humidity"></a></div>
+      </div>
+      <div class = "row">
+          <div class = "col"><a href="cloudiness.html"><img class = "img-responsive current-tag" src ="Images/LatitudeVsCloudiness.png" style = "width:100%;" alt = "Latitude vs Cloudiness"></a></div>
+          <div class = "col"><a href="windspeed.html"><img class = "img-responsive" src ="Images/LatitudeVsWindSpeed.png" style = "width:100%;" alt = "Latitude vs Wind Speed"></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>  
+</body>
+
+<!-- glyphicon glyphicon-copyright-mark -->
+<div class="fixed-bottom">
+<div id="footer">
+  <!-- <footer>  -->
+  <p style = "text-align: center; color:white;">
+    <!-- <i class="glyphicon glyphicon-copyright-mark">  -->
+        <span class="glyphicon glyphicon-copyright-mark"></span>
+      Copyright Coding Bootcamp 2018</i></p><
+<!-- </footer> -->
+</div>
+</div>
+</html>

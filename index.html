@@ -20,14 +20,53 @@
 .container {
   background: white;
 }
+/* trying to get rid of underline when clicking on a link */
+a:active{
+    text-decoration: none;
+}
+
+.btn-primary{
+    background-color: #8AD4D1;
+    text-decoration: none;
+    border-color: #8AD4D1;
+}
+.navbar-brand
+{
+    position: relative;
+    /* background: url(../images/logo.png); */
+    width: 130px;
+    /* 170 */
+    left: 15px;
+    height: 56px;
+    /* max-height: 70px; 70 height of the navbar */
+}
+.navbar-custom {
+  background-color: #ffffff !important;
+}
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background: #666666;
+}
+
+.current-tag{
+    border: 5px;
+    border-width: 5px;
+    border-color: navy;
+    border-style: solid;
+}
 </style>
 
 </head>
 
-<body style="background-color: rgb(211, 211, 211)">
+<body style="background-color: #EDEDED">
+    <!-- rgb(211, 211, 211) -->
 <!-- <body> -->
   <!-- <nav class = "navbar navbar-default navbar-fixed-top"> -->
-      <nav class="navbar navbar-header navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-header navbar-custom navbar-expand-lg navbar-light bg-light navbar-fixed-top">
         <!-- <div class = "container-fluid"></div> -->
 
         <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -51,7 +90,14 @@
 
 
         
-          <button type="button" class="btn btn-primary btn-lg"><a href = "index.html" style = color:white;>Lattitude</a></button>
+          <button type="button" class="btn btn-primary btn-lg"><a href = "index.html" style = "color:white;font-family: 'Segoe UI;"><strong>Latitude</strong></a></button>
+
+          <!-- background color did not look good due to sizing. -->
+          <!-- <div class="col-md-1">
+          <a class="navbar-brand" href="index.html" style="color: #FFFFFF; background-color: teal;">
+              <span class="nav-color">Latitude</span></a>
+            </div> -->
+
           <!-- <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -73,20 +119,20 @@
                   Plots
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Max Temperature</a>
-                  <a class="dropdown-item" href="#">Humidity</a>
-                  <a class="dropdown-item" href="#">Cloudiness</a>
-                  <a class="dropdown-item" href="#">Wind Speed</a>
+                  <a class="dropdown-item" href="temperature.html">Max Temperature</a>
+                  <a class="dropdown-item" href="humidity.html">Humidity</a>
+                  <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                  <a class="dropdown-item" href="windspeed.html">Wind Speed</a>
                   <!-- <div class="dropdown-divider"></div> -->
                   <!-- <a class="dropdown-item" href="#">Comparision</a> -->
                 </div>
               </li>
 
               <li class="nav-item active">
-                  <a class="nav-link" href="#">Comparision</a>
+                  <a class="nav-link" href="comparision.html">Comparision</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Data</a>
+                  <a class="nav-link" href="data.html">Data</a>
                 </li>
             </ul>
             </div>
@@ -106,44 +152,43 @@
  </nav> -->
  
 
- <br>
- <br>
+ <!-- <br>
+ <br> -->
  <br>
  <br>
  <div class = "container-fluid">
  <div class = "row">
  <!-- <div class="col-md-1"></div> -->
- <div class="col-md-6">
+ <div class="col-md-7">
     <div class="container">
  <h3>Summary: Latitude and Longitude</h3>
  <hr>
- <img class = "img-responsive" src ="Images/LatitudeVsTemperature.png" style = "width:40%; float: left; margin:5px;" alt = "Latitude vs Temperature">
- <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this analysis, we first 
-   pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
-<p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude. Factors we looked at included: temperature,
-cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis, as well as 
-explanations and descriptions of any trends and correlations witnessed.</p>
+ <img class = "img-responsive" src ="Images/LatitudeVsTemperature.png" style = "width:50%; float: left; margin:5px;" alt = "Latitude vs Temperature">
+ <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities. </p>
+<p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.</p>
 </div>
 </div>
-</div>
-</div>
+<!-- </div> -->
+<div class="col-md-1"></div>
 
-<div class="col-md-2">
+<div class="col-md-3">
   <div class="panel panel-default">
     <div class = "panel-body">
         <div class="container">
       <h2>visualizations</h2>
       <hr>
-      <div class = "row" style = "padding-bottom: 10px">
-        <div class = "col"><a href=""><img class = "img-responsive" src ="Images/LatitudeVsTemperature.png" style = "width:100%;" alt = "Latitude vs Temperature"></a></div>
-        <div class = "col"><a href=""><img class = "img-responsive" src ="Images/LatitudeVsHumidity.png" style = "width:100%;" alt = "Latitude vs Humidity"></a></div>
+      <div class = "row" style = "with:60%; padding-bottom: 10px">
+        <div class = "col"><a href="temperature.html"><img class = "img-responsive" src ="Images/LatitudeVsTemperature.png" style = "width:100%;" alt = "Latitude vs Temperature"></a></div>
+        <div class = "col"><a href="humidity.html"><img class = "img-responsive" src ="Images/LatitudeVsHumidity.png" style = "width:100%;" alt = "Latitude vs Humidity"></a></div>
       </div>
       <div class = "row">
-          <div class = "col"><a href=""><img class = "img-responsive" src ="Images/LatitudeVsCloudiness.png" style = "width:100%;" alt = "Latitude vs Cloudiness"></a></div>
-          <div class = "col"><a href=""><img class = "img-responsive" src ="Images/LatitudeVsWindSpeed.png" style = "width:100%;" alt = "Latitude vs Wind Speed"></a></div>
+          <div class = "col"><a href="cloudiness.html"><img class = "img-responsive" src ="Images/LatitudeVsCloudiness.png" style = "width:100%;" alt = "Latitude vs Cloudiness"></a></div>
+          <div class = "col"><a href="windspeed.html"><img class = "img-responsive" src ="Images/LatitudeVsWindSpeed.png" style = "width:100%;" alt = "Latitude vs Wind Speed"></a></div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 </div>
 
@@ -152,5 +197,15 @@ explanations and descriptions of any trends and correlations witnessed.</p>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>  
 </body>
 
-<footer> <p style = "text-align: center"><i class="glyphicon glyphicon-copyright-mark"> Copyright Coding Bootcamp 2017</i></p></footer>
+<!-- glyphicon glyphicon-copyright-mark -->
+<div class="fixed-bottom">
+<div id="footer">
+  <!-- <footer>  -->
+  <p style = "text-align: center; color:white;">
+    <!-- <i class="glyphicon glyphicon-copyright-mark">  -->
+        <span class="glyphicon glyphicon-copyright-mark"></span>
+      Copyright Coding Bootcamp 2018</i></p><
+<!-- </footer> -->
+</div>
+</div>
 </html>
